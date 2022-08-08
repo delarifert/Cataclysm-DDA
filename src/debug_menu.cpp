@@ -1858,13 +1858,13 @@ static void character_edit_menu()
                     }
                     break;
                 case 1:
-                    if( query_int( value, _( "Set the value to?  Currently: %d" ), you.get_health_tally() ) ) {
-                        you.set_health_tally( value );
+                    if( query_int( value, _( "Set the value to?  Currently: %d" ), you.get_daily_health() ) ) {
+                        you.set_daily_health( value );
                     }
                     break;
                 case 2:
-                    if( query_int( value, _( "Set the value to?  Currently: %d" ), you.get_daily_health() ) ) {
-                        you.set_daily_health( value );
+                    if( query_int( value, _( "Set the value to?  Currently: %d" ), you.get_health_tally() ) ) {
+                        you.set_health_tally( value );
                     }
                     break;
                 case 3:
