@@ -3977,6 +3977,11 @@ void Character::mod_health_tally( int mod )
     health_tally += mod;
 }
 
+void Character::set_health_tally( int nTally )
+{
+    health_tally = nTally;
+}
+
 int Character::get_stored_kcal() const
 {
     return stored_calories / 1000;

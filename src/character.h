@@ -505,6 +505,7 @@ class Character : public Creature, public visitable
 
         /** Setters for health values exclusive to characters */
         void set_lifestyle( int nhealthy );
+        void set_health_tally( int ntally );
         void set_daily_health( int nhealthy_mod );
 
         /** Getter for need values exclusive to characters */

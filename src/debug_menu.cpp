@@ -1847,7 +1847,8 @@ static void character_edit_menu()
             uilist smenu;
             smenu.addentry( 0, true, 'h', "%s: %d", _( "Health" ), you.get_lifestyle() );
             smenu.addentry( 1, true, 'm', "%s: %d", _( "Health modifier" ), you.get_daily_health() );
-            smenu.addentry( 2, true, 'r', "%s: %d", _( "Radiation" ), you.get_rad() );
+            smenu.addentry( 2, true, 't', "%s: %d", _( "Health tally" ), you.get_health_tally() );
+            smenu.addentry( 3, true, 'r', "%s: %d", _( "Radiation" ), you.get_rad() );
             smenu.query();
             int value;
             switch( smenu.ret ) {
@@ -1857,11 +1858,16 @@ static void character_edit_menu()
                     }
                     break;
                 case 1:
+                    if( query_int( value, _( "Set the value to?  Currently: %d" ), you.get_health_tally() ) ) {
+                        you.set_health_tally( value );
+                    }
+                    break;
+                case 2:
                     if( query_int( value, _( "Set the value to?  Currently: %d" ), you.get_daily_health() ) ) {
                         you.set_daily_health( value );
                     }
                     break;
-                case 2:
+                case 3:
                     if( query_int( value, _( "Set the value to?  Currently: %d" ), you.get_rad() ) ) {
                         you.set_rad( value );
                     }
